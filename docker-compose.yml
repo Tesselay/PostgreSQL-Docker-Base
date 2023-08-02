@@ -1,0 +1,15 @@
+services:
+  hotdata:
+    container_name: ${NAME}
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - "${PORT}:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ${HOST_PATH}:/var/lib/postgresql/data
+      - ${PWD}/custom_postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+      - ${PWD}/Logs:/var/lib/postgresql/data/log  
