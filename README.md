@@ -1,6 +1,6 @@
 # PostgreSQL Docker Base
  
-Either change the values inside the compose file or use this command to set them when starting a container.
+Either change the values inside the compose file or use this command to set them when starting a container. The variables inside the psql command (./Scripts/*) probably won't work, so they'll need to be replaced manually-
 ```bash
 docker compose -e NAME=VAL -e PORT=VAL -e DB_PASSWORD=VAL -e DB_USER=val -e DB_NAME=val -e HOST_PATH=VAL up
 ```
