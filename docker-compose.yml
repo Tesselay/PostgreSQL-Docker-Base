@@ -12,6 +12,6 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ${HOST_PATH}:/var/lib/postgresql/data/pgdata
-      - .\custom_postgresql.conf:/etc/postgresql/postgresql.conf
+      - .\postgresql.conf:/etc/postgresql/postgresql.conf
       - .\Logs:/etc/postgresql/logs
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
